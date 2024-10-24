@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33513.286
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7F26A7DC-6335-4CDE-A13C-D7905723C57E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet.challenge.api", "src\sage.challenge.api\dotnet.challenge.api.csproj", "{8F2B0AA9-A88B-4E9A-B68B-CABE491A181C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet.challenge.api", "src\dotnet.challenge.api\dotnet.challenge.api.csproj", "{8F2B0AA9-A88B-4E9A-B68B-CABE491A181C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet.challenge.data", "src\sage.challenge.data\dotnet.challenge.data.csproj", "{71866096-4B4E-4120-9B39-6445FA43D298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet.challenge.data", "src\dotnet.challenge.data\dotnet.challenge.data.csproj", "{71866096-4B4E-4120-9B39-6445FA43D298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
