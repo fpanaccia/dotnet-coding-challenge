@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\dotnet.challenge.data\dotnet.challenge.data.csproj" />
+    <ProjectReference Include="..\dotnet.challenge.application\Dotnet.Challenge.Application.csproj" />
+    <ProjectReference Include="..\dotnet.challenge.data\Dotnet.Challenge.Data.csproj" />
+    <ProjectReference Include="..\dotnet.challenge.domain\Dotnet.Challenge.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotnet.challenge.data\Dotnet.Challenge.Data.csproj" />
+    <ProjectReference Include="..\dotnet.challenge.domain\Dotnet.Challenge.Domain.csproj" />
+    <ProjectReference Include="..\dotnet.challenge.data\Dotnet.Challenge.Data.csproj" />
+  </ItemGroup>
+
+</Project>

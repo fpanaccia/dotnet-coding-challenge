@@ -4,11 +4,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using dotnet.challenge.data.Cache;
-using dotnet.challenge.data.Entities;
 using System;
+using Dotnet.Challenge.Data.Cache;
+using Dotnet.Challenge.Application.Services;
+using Dotnet.Challenge.Domain.Aggregates.User;
+using FluentValidation;
+using System.IO;
+using System.Reflection;
+using Dotnet.Challenge.Data.Repositories;
 
-namespace dotnet.challenge.api
+namespace Dotnet.Challenge.Api
 {
     public class Startup
     {
@@ -27,10 +32,16 @@ namespace dotnet.challenge.api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "User API", Version = "v1" });
+
+                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
 
-            services.AddSingleton<ISimpleObjectCache<Guid, User>, SimpleObjectCache<Guid, User>>();
+            services.AddSingleton<ISimpleObjectCache<Guid, Data.Entities.User>, SimpleObjectCache<Guid, Data.Entities.User>>();
+            services.AddScoped<IUserRepository, UserCacheRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IValidator<User>, UserValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +60,7 @@ namespace dotnet.challenge.api
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "User API V1");
                 c.RoutePrefix = string.Empty;
             });
 

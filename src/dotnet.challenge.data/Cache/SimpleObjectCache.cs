@@ -1,4 +1,4 @@
-﻿namespace dotnet.challenge.data.Cache
+﻿namespace Dotnet.Challenge.Data.Cache
 {
     using System;
     using System.Collections.Generic;

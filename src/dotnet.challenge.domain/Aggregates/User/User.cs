@@ -1,33 +1,15 @@
 using System;
 
-namespace Dotnet.Challenge.Data.Entities
+namespace Dotnet.Challenge.Domain.Aggregates.User
 {
     public class User
     {
-        /// <summary>
-        /// ID of the User.
-        /// </summary>
         public Guid Id { get; set; }
-
-        /// <summary>
-        /// First name of the User.
-        /// </summary>
         public string FirstName { get; set; }
-
-        /// <summary>
-        /// Last name of the User.
-        /// </summary>
         public string LastName { get; set; }
-
-        /// <summary>
-        /// Email of the user
-        /// </summary>
         public string Email { get; set; }
-
-        /// <summary>
-        /// User's D.O.B.
-        /// </summary>
         public DateTime DateOfBirth { get; set; }
+        public int Age => DateTime.Today.Year - DateOfBirth.Year - (DateOfBirth.Date > DateTime.Today.AddYears(-(DateTime.Today.Year - DateOfBirth.Year)) ? 1 : 0);
 
         public User(Guid id, string firstName, string lastName, string email, DateTime dateOfBirth)
         {

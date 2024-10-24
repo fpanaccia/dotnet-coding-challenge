@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace dotnet.challenge.data.Cache
+namespace Dotnet.Challenge.Data.Cache
 {
     public interface ISimpleObjectCache<TKey, TValue>
     where TKey : struct

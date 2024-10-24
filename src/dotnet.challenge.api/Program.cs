@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace dotnet.challenge.api
+namespace Dotnet.Challenge.Api
 {
     public class Program
     {
